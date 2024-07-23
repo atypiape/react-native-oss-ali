@@ -3,8 +3,5 @@ android/aliyun-oss-react-native.iml
 node_modules/
 .idea
 .DS_Store
-Example/ios/Pods/
 package-lock.json
-Example/ios/Example.xcodeproj/project.pbxproj
 ios/RNAliyunOSS.xcodeproj/project.xcworkspace/
-Example/package-lock.json

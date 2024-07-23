@@ -1,8 +1,6 @@
 import {DeviceEventEmitter, NativeEventEmitter, NativeModules, Platform} from "react-native";
 const {RNAliyunOSS} = NativeModules;
 
-let subscription;
-
 //default configuration for OSS Client
 const conf = {
     maxRetryCount: 3,
@@ -207,6 +205,7 @@ export default AliyunOSS = {
      */
     addEventListener(event, callback) {
         const RNAliyunEmitter = Platform.OS === 'ios' ? new NativeEventEmitter(RNAliyunOSS) : DeviceEventEmitter;
+        let subscription;
         switch (event) {
             case 'uploadProgress':
                 subscription = RNAliyunEmitter.addListener(
@@ -223,22 +222,12 @@ export default AliyunOSS = {
             default:
                 break;
         }
+        return subscription;
     },
 
-    /**
-     * remove event listener for native upload/download event
-     * @param event one of 'uploadProgress' or 'downloadProgress'
-     */
-    removeEventListener(event) {
-        switch (event) {
-            case 'uploadProgress':
-                subscription.remove();
-                break;
-            case 'downloadProgress':
-                subscription.remove();
-                break;
-            default:
-                break;
+    removeEventListener(subscription) {
+        if (subscription) {
+            subscription.remove();
         }
     }
 };

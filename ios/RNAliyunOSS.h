@@ -7,7 +7,7 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
-#import <AliyunOSSiOS/OSSService.h>
+#import "./AliyunSDK/AliyunOSSiOS.framework/Headers/OSSService.h"
 
 
 @interface RNAliyunOSS : RCTEventEmitter <RCTBridgeModule>
