@@ -1,6 +1,6 @@
 {
-  "name": "react-native-oss-aliyun",
-  "version": "1.0.0-alpha.8",
+  "name": "react-native-oss-ali",
+  "version": "1.0.0",
   "description": "React Native SDK for aliyun object storage service",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atypiape/react-native-oss-aliyun.git"
+    "url": "git+https://github.com/atypiape/react-native-oss-ali.git"
   },
   "keywords": [
     "oss",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atypiape/react-native-oss-aliyun/issues"
+    "url": "https://github.com/atypiape/react-native-oss-ali/issues"
   },
-  "homepage": "https://github.com/atypiape/react-native-oss-aliyun.git#readme"
+  "homepage": "https://github.com/atypiape/react-native-oss-ali.git#readme"
 }

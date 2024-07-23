@@ -1,6 +1,6 @@
 # Aliyun OSS SDK for React Native
 
-## [README of English](https://github.com/aliyun/react-native-oss-aliyun/blob/master/README-EN.md)
+## [README of English](https://github.com/aliyun/react-native-oss-ali/blob/master/README-EN.md)
 
 ## 简介
 
@@ -33,18 +33,18 @@
 
 ## 安装
 
-react-native-oss-aliyun 可通过 npm 或者 yarn 安装：
+react-native-oss-ali 可通过 npm 或者 yarn 安装：
 
 * npm
 
 ```bash
-npm install react-native-oss-aliyun --save
+npm install react-native-oss-ali --save
 ```
 
 * yarn
 
 ```bash
-yarn add react-native-oss-aliyun
+yarn add react-native-oss-ali
 ```
 
 iOS 需执行以下命令：
@@ -61,7 +61,7 @@ pod install
 
 * step-1:导入AliyunOSS
 ```
-import AliyunOSS from 'react-native-oss-aliyun'
+import AliyunOSS from 'react-native-oss-ali'
 ```
 * step-2:开启调试模式 (可选)
 
@@ -342,7 +342,7 @@ parameters:
 * step-1:克隆项目并安装依赖包
 
 ```
-1. git clone https://github.com/aliyun/react-native-oss-aliyun.git
+1. git clone https://github.com/aliyun/react-native-oss-ali.git
 2. cd Example
 3. npm install
 ```
