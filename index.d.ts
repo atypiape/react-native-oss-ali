@@ -4,7 +4,7 @@ export interface Configuration {
   maxRetryCount: number;
   timeoutIntervalForRequest: number;
   timeoutIntervalForResource: number;
-};
+}
 
 export interface Options {
   callback: {
@@ -22,6 +22,7 @@ export interface Options {
     }
   }
 }
+
 export interface ProgressCallbackArgs {
   currentSize: number;
   totalSize: number;
