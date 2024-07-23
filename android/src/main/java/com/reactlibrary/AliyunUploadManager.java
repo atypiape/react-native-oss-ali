@@ -72,25 +72,26 @@ public class AliyunUploadManager {
      */
     public void asyncUpload(final ReactContext context, String bucketName, String ossFile, String sourceFile, ReadableMap options, final Promise promise) {
         // Content to file:// start
+        sourceFile = sourceFile.replace("file:///", "/");
         Uri selectedVideoUri = Uri.parse(sourceFile);
 
         // 1. content uri -> file path
         // 2. inputstream -> temp file path
-        Cursor cursor = null;
-        try {
-            String[] proj = {MediaStore.Images.Media.DATA};
-            cursor = context.getCurrentActivity().getContentResolver().query(selectedVideoUri, proj, null, null, null);
-            if (cursor == null) sourceFile = selectedVideoUri.getPath();
-            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            cursor.moveToFirst();
-            sourceFile = cursor.getString(column_index);
-        } catch (Exception e) {
-            sourceFile = FileUtils.getFilePathFromURI(context.getCurrentActivity(), selectedVideoUri);
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
-        }
+        // Cursor cursor = null;
+        // try {
+        //     String[] proj = {MediaStore.Images.Media.DATA};
+        //     cursor = context.getCurrentActivity().getContentResolver().query(selectedVideoUri, proj, null, null, null);
+        //     if (cursor == null) sourceFile = selectedVideoUri.getPath();
+        //     int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        //     cursor.moveToFirst();
+        //     sourceFile = cursor.getString(column_index);
+        // } catch (Exception e) {
+        //     sourceFile = FileUtils.getFilePathFromURI(context.getCurrentActivity(), selectedVideoUri);
+        // } finally {
+        //     if (cursor != null) {
+        //         cursor.close();
+        //     }
+        // }
         // init upload request
         PutObjectRequest put = new PutObjectRequest(bucketName, ossFile, sourceFile);
         ObjectMetadata metadata = new ObjectMetadata();
@@ -118,7 +119,8 @@ public class AliyunUploadManager {
                 Log.d("PutObject", "UploadSuccess");
                 Log.d("ETag", result.getETag());
                 Log.d("RequestId", result.getRequestId());
-                promise.resolve("UploadSuccess");
+                // promise.resolve("UploadSuccess");
+                promise.resolve(result.toString());
             }
 
             @Override
